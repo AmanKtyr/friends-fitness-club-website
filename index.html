@@ -84,7 +84,7 @@
 
             <div class="loading"></div>
 
-            <div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+            <div id="loading-icon"><img src="images/logo-icon.png" alt="Loading" style="width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-color);"></div>
 
         </div>
 
@@ -106,9 +106,15 @@
 
                     <!-- Logo Start -->
 
-                    <a class="navbar-brand" href="#home">
+                    <a class="navbar-brand" href="#home" style="display: flex; align-items: center; gap: 14px; text-decoration: none;">
 
-                        <img src="images/logo.svg" alt="Logo">
+                        <img src="images/logo-icon.png" alt="Friend's Fitness Club Icon" style="width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2.5px solid var(--accent-color);">
+
+                        <span class="brand-name-text" style="font-family: var(--accent-font); font-size: 23px; font-weight: 700; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.1;">
+
+                            Friend's <span style="color: var(--accent-color);">Fitness Club</span>
+
+                        </span>
 
                     </a>
 
@@ -142,6 +148,8 @@
 
                                 <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
 
+
+
                             </ul>
 
                         </div>
@@ -152,8 +160,8 @@
 
                         <div class="header-btn">
 
-                            <a href="https://fitstack.nextgenapplication.com/login/"
-                                class="btn-default btn-highlighted">Login</a>
+                            <a href="#contact"
+                                class="btn-default btn-highlighted">Get In Touch</a>
 
                         </div>
 
@@ -163,11 +171,7 @@
 
                     <!-- Main Menu End -->
 
-                    <div class="mobile-login-btn-container d-lg-none" style="margin-left: auto; margin-right: 15px; z-index: 999;">
 
-                        <a href="https://fitstack.nextgenapplication.com/login/" class="btn-default btn-highlighted" style="padding: 6px 14px; font-size: 13px; border-radius: 4px; display: inline-block;">Login</a>
-
-                    </div>
 
                     <div class="navbar-toggle"></div>
 
@@ -3704,9 +3708,19 @@
 
                         <!-- Footer Logo Start -->
 
-                        <div class="footer-logo">
+                        <div class="footer-logo" style="margin-bottom: 25px;">
 
-                            <img src="images/logo.svg" alt="">
+                            <a href="#home" style="display: flex; align-items: center; justify-content: center; gap: 18px; text-decoration: none;">
+
+                                <img src="images/logo-icon.png" alt="Friend's Fitness Club Icon" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover; border: 3px solid var(--accent-color);">
+
+                                <span style="font-family: var(--accent-font); font-size: 28px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 1px; line-height: 1.1;">
+
+                                    Friend's <span style="color: var(--accent-color);">Fitness Club</span>
+
+                                </span>
+
+                            </a>
 
                         </div>
 
@@ -3807,7 +3821,7 @@
 
                                 <li><a href="#programs">Programs</a></li>
 
-                                <li><a href="#blog">Blogs</a></li>
+                                <li><a href="https://fitstack.nextgenapplication.com/login/" target="_blank" style="color: var(--accent-color) !important; font-weight: 600;">Member Login</a></li>
 
                                 <li><a href="#contact">Contact Us</a></li>
 
@@ -4037,14 +4051,42 @@
     <a href="tel:+918707774236" class="floating-call-btn" title="Call Now">
         <i class="fa-solid fa-phone"></i>
     </a>
+    
+    <!-- Go To Top Button Start -->
+    <a href="#" id="goToTopBtn" class="go-to-top-btn" title="Go to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
 
     <style>
+        /* Mobile Login Button Styles */
+        .mobile-login-btn {
+            background-color: var(--accent-color);
+            color: var(--primary-color) !important;
+            padding: 8px 18px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 12px rgba(255, 193, 7, 0.25);
+            text-decoration: none;
+            border: none;
+        }
+        .mobile-login-btn:hover {
+            background-color: var(--white-color);
+            color: var(--primary-color) !important;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Floating Call Now Button Styles */
         .floating-call-btn {
             position: fixed;
             bottom: 30px;
             left: 30px;
-            background-color: #ffc107;
-            color: #0b132b !important;
+            background-color: var(--accent-color);
+            color: var(--primary-color) !important;
             width: 55px;
             height: 55px;
             border-radius: 50%;
@@ -4061,17 +4103,17 @@
         }
         .floating-call-btn:hover {
             transform: scale(1.1);
-            background-color: #ffca2c;
-            box-shadow: 0 6px 25px rgba(255, 193, 7, 0.4);
+            background-color: var(--white-color);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
         }
-        /* Ripple pulsing animation around the button */
+        /* Ripple pulsing animation around the call button */
         .floating-call-btn::after {
             content: '';
             position: absolute;
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            border: 2px solid #ffc107;
+            border: 2px solid var(--accent-color);
             top: 0;
             left: 0;
             animation: call-pulse-ripple 1.8s infinite ease-out;
@@ -4088,33 +4130,14 @@
                 opacity: 0;
             }
         }
-        /* Responsiveness for small mobile displays */
-        @media (max-width: 575px) {
-            .floating-call-btn {
-                bottom: 25px;
-                left: 25px;
-                width: 50px;
-                height: 50px;
-            }
-            .floating-call-btn i {
-                font-size: 18px;
-            }
-        }
-    </style>
-    <!-- Floating Call Now Button End -->
 
-    <!-- Go To Top Button Start -->
-    <a href="#" id="goToTopBtn" class="go-to-top-btn" title="Go to Top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </a>
-
-    <style>
+        /* Go To Top Button Styles */
         .go-to-top-btn {
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background-color: #ffc107;
-            color: #0b132b !important;
+            background-color: var(--accent-color);
+            color: var(--primary-color) !important;
             width: 55px;
             height: 55px;
             border-radius: 50%;
@@ -4139,22 +4162,32 @@
             transition: transform 0.3s ease;
         }
         .go-to-top-btn:hover {
-            background-color: #ffca2c;
-            box-shadow: 0 6px 25px rgba(255, 193, 7, 0.4);
+            background-color: var(--white-color);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.3);
         }
         .go-to-top-btn:hover i {
             transform: translateY(-4px);
         }
-        /* Responsiveness for mobile displays */
+
+        /* Responsiveness for small mobile displays */
         @media (max-width: 575px) {
-            .go-to-top-btn {
+            .floating-call-btn, .go-to-top-btn {
                 bottom: 25px;
-                right: 25px;
                 width: 50px;
                 height: 50px;
             }
-            .go-to-top-btn i {
+            .floating-call-btn {
+                left: 25px;
+            }
+            .go-to-top-btn {
+                right: 25px;
+            }
+            .floating-call-btn i, .go-to-top-btn i {
                 font-size: 18px;
+            }
+            .mobile-login-btn {
+                padding: 6px 14px;
+                font-size: 12px;
             }
         }
     </style>
